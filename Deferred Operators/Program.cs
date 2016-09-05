@@ -98,13 +98,13 @@ namespace Deferred_Operators
             //и для каждого из таких employeeOption создаем анонимную сущьность, в которую помещаем поля
             //имя сущбности employeeArray для которой мы выбираем эту сущьность, id и optionCount из employeeOption
             //SelectMany(T=F(a)) выбирает все обьекты типа T которые удовлетворяют функции F(a).
-            var employeeOptions = employeeArray.
+            var SelectManyExample = employeeArray.
                 SelectMany(e => //здесь входящий параметр employeeArray[i], выходящий сущбность анонимного класса
                     employeeOptionArray.Where(eo => eo.Id == e.Id).Select(eo => 
                         new { firstname=e.firstName, id = eo.Id, OptionCount = eo.optionCount }
                         ));
 
-            foreach (var item in employeeOptions)
+            foreach (var item in SelectManyExample)
             {
                 Console.WriteLine(item);
             }
@@ -368,7 +368,31 @@ namespace Deferred_Operators
 
             #endregion
 
-       
+            #region GroupBy
+            // The examples of GroupBy operator.
+            // first IGrouping intarface 
+            // public interface Igrouping<K,T>:IEnumeratble<T> {K Key{get;} }
+            // GroupBy<T,K>(this IEnumerable<T>, Func<T,K> )
+            // GroupBy<T,K>(this IEnumerable<T>, Func<T,K>, IEqualityComparer<K> )
+            // GroupBy<T,K>(this IEnumerable<T>, Func<T,K>, Func<T,E> elementSelector, IEqualityComparer<K> )
+
+            IEnumerable<IGrouping<int, EmployeeOptionEntry>> GroupByExample = employeeOptionArray
+                .GroupBy(o => o.Id);
+            //First enumerate through the outer sequence of IGroupings
+            foreach (IGrouping<int, EmployeeOptionEntry> item in GroupByExample)
+            {
+                Console.WriteLine("Option records for employee:"+item.Key);
+                //now enumerate through the grouping's sequence of EmployeeOptionEntry
+                foreach (EmployeeOptionEntry element in item)
+                {
+                    Console.WriteLine("\tid={0}\t : optionCount={1}\t : dateAwarded={2:d}",
+                        element.Id,element.optionCount,element.dateAwarded);
+                }
+            }
+
+
+            #endregion
+
         }
     }
     //OrderBy class for example.
