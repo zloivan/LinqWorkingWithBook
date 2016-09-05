@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithBookPart2", "LinqWithBookPart2\LinqWithBookPart2.csproj", "{57088FA0-E313-49E6-8D3D-0143D1652EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharpLanguageEnchancementsForLINQ", "cSharpLanguageEnchancementsForLINQ\cSharpLanguageEnchancementsForLINQ.csproj", "{F26B2AA5-A5EA-4405-83C5-D15085201BF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToObjectsIntroduction", "LinqToObjectsIntroduction\LinqToObjectsIntroduction.csproj", "{601241DA-782E-4559-8741-2E3C2501ED9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deferred Operators", "Deferred Operators\Deferred Operators.csproj", "{9D25A91B-4F7C-48D8-AA59-3E055FFEA1F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601241DA-782E-4559-8741-2E3C2501ED9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601241DA-782E-4559-8741-2E3C2501ED9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601241DA-782E-4559-8741-2E3C2501ED9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601241DA-782E-4559-8741-2E3C2501ED9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D25A91B-4F7C-48D8-AA59-3E055FFEA1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D25A91B-4F7C-48D8-AA59-3E055FFEA1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D25A91B-4F7C-48D8-AA59-3E055FFEA1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D25A91B-4F7C-48D8-AA59-3E055FFEA1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

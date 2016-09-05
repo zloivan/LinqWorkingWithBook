@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithBookPart2", "LinqWithBookPart2\LinqWithBookPart2.csproj", "{57088FA0-E313-49E6-8D3D-0143D1652EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharpLanguageEnchancementsForLINQ", "cSharpLanguageEnchancementsForLINQ\cSharpLanguageEnchancementsForLINQ.csproj", "{F26B2AA5-A5EA-4405-83C5-D15085201BF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57088FA0-E313-49E6-8D3D-0143D1652EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26B2AA5-A5EA-4405-83C5-D15085201BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
