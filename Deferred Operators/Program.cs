@@ -368,9 +368,7 @@ namespace Deferred_Operators
 
             #endregion
 
-            #region newRegion
-
-            #endregion
+       
         }
     }
     //OrderBy class for example.
