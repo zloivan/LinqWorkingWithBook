@@ -390,6 +390,24 @@ namespace Deferred_Operators
                 }
             }
 
+            //Example of second prototype of GroupBy
+            Console.WriteLine();
+            //We are gonna use our comparerClass in that case
+            MyFounderNumberComparer InstanceForGroupByExample = new MyFounderNumberComparer();
+
+            IEnumerable<IGrouping<int, EmployeeOptionEntry>> GroupByExample2 = employeeOptionArray
+                .GroupBy(o=>o.Id,InstanceForGroupByExample);
+
+            foreach (IGrouping<int,EmployeeOptionEntry> item in GroupByExample2)
+            {
+                Console.WriteLine("Option records for: "+ 
+                    (InstanceForGroupByExample.isFounder(item.Key)? "founder":"non-founder"));
+                foreach (EmployeeOptionEntry subItem in item)
+                {
+                    Console.WriteLine("id={0} : optionCounts={1} : dateAwarded={2:d}",
+                        subItem.Id,subItem.optionCount,subItem.dateAwarded);
+                }
+            }
 
             #endregion
 
