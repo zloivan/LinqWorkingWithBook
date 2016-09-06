@@ -45,6 +45,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeOptionEntry.cs" />
     <Compile Include="MyFounderNumberComparer.cs" />
+    <Compile Include="MyVowelToConsonantRatioComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
