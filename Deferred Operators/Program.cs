@@ -369,6 +369,7 @@ namespace Deferred_Operators
             #endregion
 
             #region GroupBy
+            Console.WriteLine("-----------------Example of groupBy----------------------");
             // The examples of GroupBy operator.
             // first IGrouping intarface 
             // public interface Igrouping<K,T>:IEnumeratble<T> {K Key{get;} }
@@ -376,8 +377,11 @@ namespace Deferred_Operators
             // GroupBy<T,K>(this IEnumerable<T>, Func<T,K>, IEqualityComparer<K> )
             // GroupBy<T,K>(this IEnumerable<T>, Func<T,K>, Func<T,E> elementSelector, IEqualityComparer<K> )
 
+
+
             IEnumerable<IGrouping<int, EmployeeOptionEntry>> GroupByExample = employeeOptionArray
                 .GroupBy(o => o.Id);
+
             //First enumerate through the outer sequence of IGroupings
             foreach (IGrouping<int, EmployeeOptionEntry> item in GroupByExample)
             {
@@ -389,11 +393,14 @@ namespace Deferred_Operators
                         element.Id,element.optionCount,element.dateAwarded);
                 }
             }
+            
 
+
+            
+            
             //Example of second prototype of GroupBy
-            Console.WriteLine();
             //We are gonna use our comparerClass in that case
-            MyFounderNumberComparer InstanceForGroupByExample = new MyFounderNumberComparer();
+            MyFounderNumberComparer<int> InstanceForGroupByExample = new MyFounderNumberComparer<int>();
 
             IEnumerable<IGrouping<int, EmployeeOptionEntry>> GroupByExample2 = employeeOptionArray
                 .GroupBy(o=>o.Id,InstanceForGroupByExample);
@@ -408,6 +415,61 @@ namespace Deferred_Operators
                         subItem.Id,subItem.optionCount,subItem.dateAwarded);
                 }
             }
+
+
+
+            //Example of a third GroupBy Prototype
+            IEnumerable<IGrouping<int, DateTime>> GroupByExample3 = employeeOptionArray
+                .GroupBy(o=>o.Id,e=>e.dateAwarded);
+
+            foreach (IGrouping<int,DateTime> item in GroupByExample3)
+            {
+                Console.WriteLine("Option records for employee:"+item.Key);
+
+                foreach (DateTime subitem in item)
+                {
+                    Console.WriteLine(subitem.ToShortDateString());
+                }
+            }
+
+            //Forth last example of GroupBy using fourth prototype
+            IEnumerable<IGrouping<int, DateTime>> GroupByExample4 = employeeOptionArray
+                .GroupBy(o=>o.Id,o=>o.dateAwarded,InstanceForGroupByExample);
+
+            foreach (IGrouping<int,DateTime> item in GroupByExample4)
+            {
+                //NOTICE!!!!
+                Console.WriteLine("Option record for: "+ (InstanceForGroupByExample.isFounder(item.Key)? "Founder":"non-Founder"));
+                foreach (DateTime subitem in item)
+                {
+                    Console.WriteLine("{0}",subitem.ToShortDateString());
+                }
+            }
+
+            //Just a little play with GroupBy to sort all shit.
+            //1)Ключ по которому проводим отбор, все элементы которые равны по ключу будут помещены в группы
+            //2)Выбираем элементы которые мы будем брать, например в классе Employee мы можем брать
+            //только имена.
+            //3)Comparer это класс, который укзывает по каким признакам стоит считать равны обьекты
+            //ключу или нет. Например, указываем ключ строку с именем и берем класс компэрер, который
+            //считает одинаковыми строки  длинна которых не привышает определенной длинны, ну или
+            //он считает строки равными с ключем, если они попадают в зарание прописанных список строк.
+
+            MyFounderNumberComparer<string> CompareByName = new MyFounderNumberComparer<string>();
+            CompareByName.FounderName = "David";
+
+            IEnumerable<IGrouping<string, string>> GropuByExaqmple5 = employeeArray
+                .GroupBy(e=>e.firstName,e=>e.firstName,CompareByName);
+
+            foreach (IGrouping<string,string> item in GropuByExaqmple5)
+            {
+                Console.WriteLine("Those employee are "+(CompareByName.isFounder(item.Key)?"Founder":"non-founder") );
+                foreach (string subitem in item)
+                {
+                    Console.WriteLine(subitem);
+                }
+            }
+
 
             #endregion
 
