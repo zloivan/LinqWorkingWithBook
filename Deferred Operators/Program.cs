@@ -327,6 +327,8 @@ namespace Deferred_Operators
             //Example of join operator.
             //Join(this IEnumerable<T>, IEnumerable<U>, Func<T,K>, Func<U,K>, Func<T,U,V>)
 
+            //Hello
+
             var JoinExample = employeeOptionArray.Join
                 (
                 employeeArray,
