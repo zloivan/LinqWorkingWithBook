@@ -48,7 +48,7 @@ namespace LinqToObjectsIntroduction
             {
                 Console.Write(item+" ");
             }
-            wtf is going on
+            //wtf is going on
             Console.WriteLine();
             Console.WriteLine("------------------Returning all odd presidents---------------------------");
             foreach (var item in oddPesedents)
